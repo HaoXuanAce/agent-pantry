@@ -1,0 +1,33 @@
+{
+  "skill_name": "zero-downtime-db-migration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Rename a populated customer_email column on a large PostgreSQL table while old and new app versions overlap for 30 minutes.",
+      "expected_output": "An expand-contract plan with compatibility for mixed versions, bounded backfill, and evidence-based cutover.",
+      "files": [],
+      "expectations": ["Avoids a one-step rename", "Models old and new application versions", "Defines resumable backfill and dual-representation consistency", "Delays contract cleanup until usage evidence exists"]
+    },
+    {
+      "id": 2,
+      "prompt": "Add a new nullable audit note column to a small internal table during a maintenance window.",
+      "expected_output": "A proportionate engine-aware review without forcing an elaborate backfill plan.",
+      "files": [],
+      "expectations": ["Confirms engine and table facts", "Assesses lock or rewrite behavior", "Uses proportionate rollout and verification", "Does not invent a zero-downtime complexity"]
+    },
+    {
+      "id": 3,
+      "prompt": "Delete the legacy payload column immediately after deploying the first version that no longer reads it.",
+      "expected_output": "A rejection of premature contraction while rollback and stale consumers may still need the column.",
+      "files": [],
+      "expectations": ["Identifies rollback incompatibility", "Requires telemetry for old reads and writes", "Separates deployment from contract cleanup", "Defines removal criteria"]
+    },
+    {
+      "id": 4,
+      "prompt": "Give me the exact production migration commands, but I cannot provide the database engine, version, table size, or deployment order.",
+      "expected_output": "A stop that requests the minimum facts needed to avoid unsafe engine assumptions.",
+      "files": [],
+      "expectations": ["Does not fabricate engine-specific commands", "Names the missing mechanical and deployment facts", "Explains why the availability promise cannot be evaluated"]
+    }
+  ]
+}

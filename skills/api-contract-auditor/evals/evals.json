@@ -1,0 +1,50 @@
+{
+  "skill_name": "api-contract-auditor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The API adds a new order status. The server schema treats this as additive.",
+      "expected_output": "A result that search for exhaustive consumers; model old-client behavior; classify conditionally if evidence is incomplete while avoiding automatically call every enum addition safe.",
+      "files": [],
+      "expectations": [
+        "The result search for exhaustive consumers",
+        "The result model old-client behavior",
+        "The result classify conditionally if evidence is incomplete",
+        "The result does not automatically call every enum addition safe"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A request field becomes required in the validator but the OpenAPI file was not updated.",
+      "expected_output": "A result that compare runtime with declaration; classify existing allowed requests as broken while avoiding trust only the schema file.",
+      "files": [],
+      "expectations": [
+        "The result compare runtime with declaration",
+        "The result classify existing allowed requests as broken",
+        "The result does not trust only the schema file"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "A producer and consumer deploy independently through a rolling update while an event payload is renamed.",
+      "expected_output": "A result that model both version directions and replay; recommend expand-and-contract while avoiding assume atomic deployment.",
+      "files": [],
+      "expectations": [
+        "The result model both version directions and replay",
+        "The result recommend expand-and-contract",
+        "The result does not assume atomic deployment"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "A private helper signature changes and all in-repository call sites are updated.",
+      "expected_output": "A result that look for exports, reflection, or external packages; classify internal if evidence supports it while avoiding label all signature changes as public breaking changes.",
+      "files": [],
+      "expectations": [
+        "The result look for exports, reflection, or external packages",
+        "The result classify internal if evidence supports it",
+        "The result does not label all signature changes as public breaking changes"
+      ]
+    }
+  ]
+}

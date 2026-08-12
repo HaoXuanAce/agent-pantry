@@ -1,0 +1,53 @@
+{
+  "skill_name": "frontend-reconstruction",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Rebuild this dashboard from one 1440px screenshot in an existing Vue project.",
+      "expected_output": "A result that inspect project conventions; separate observed facts from responsive assumptions; define component boundaries; verify narrow and wide viewports while avoiding hardcode the whole screenshot with absolute positions; switch frameworks.",
+      "files": [],
+      "expectations": [
+        "The result inspect project conventions",
+        "The result separate observed facts from responsive assumptions",
+        "The result define component boundaries",
+        "The result verify narrow and wide viewports",
+        "The result does not hardcode the whole screenshot with absolute positions",
+        "The result does not switch frameworks"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The reference contains a distinctive product photograph, but no source asset was supplied.",
+      "expected_output": "A result that look for local assets; report or request the missing asset if identity matters while avoiding silently use an unrelated placeholder.",
+      "files": [],
+      "expectations": [
+        "The result look for local assets",
+        "The result report or request the missing asset if identity matters",
+        "The result does not silently use an unrelated placeholder"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "The mobile reference shows a collapsed navigation menu.",
+      "expected_output": "A result that implement keyboard-accessible open and close behavior; verify focus visibility; test the narrow viewport while avoiding render a decorative button that does nothing.",
+      "files": [],
+      "expectations": [
+        "The result implement keyboard-accessible open and close behavior",
+        "The result verify focus visibility",
+        "The result test the narrow viewport",
+        "The result does not render a decorative button that does nothing"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Recreate a new screen inside a product that already has Button, Card, and Dialog components.",
+      "expected_output": "A result that reuse established components and tokens; preserve existing style conventions while avoiding create duplicate base components for visual convenience.",
+      "files": [],
+      "expectations": [
+        "The result reuse established components and tokens",
+        "The result preserve existing style conventions",
+        "The result does not create duplicate base components for visual convenience"
+      ]
+    }
+  ]
+}

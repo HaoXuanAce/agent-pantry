@@ -1,0 +1,50 @@
+{
+  "skill_name": "pull-request-reviewer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review a diff that changes an API page size default from 50 to 20 while the mobile client assumes all records arrive in one request.",
+      "expected_output": "A result that trace consumers; identify the realistic data-loss-like UI symptom; rank the finding while avoiding focus on code style.",
+      "files": [],
+      "expectations": [
+        "The result trace consumers",
+        "The result identify the realistic data-loss-like UI symptom",
+        "The result rank the finding",
+        "The result does not focus on code style"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The edited file contains an old inefficient query unrelated to this one-line copy change.",
+      "expected_output": "A review scoped to the copy diff that does not turn an unrelated pre-existing query into a blocking finding.",
+      "files": [],
+      "expectations": [
+        "The result keeps review scoped to the diff",
+        "The result distinguishes changed behavior from pre-existing code",
+        "The result does not report the unrelated pre-existing issue as a blocking finding"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review a new authenticated endpoint that returns any invoice by numeric id.",
+      "expected_output": "A result that check object-level authorization; explain a concrete cross-tenant trigger and impact while avoiding treat authentication as sufficient authorization.",
+      "files": [],
+      "expectations": [
+        "The result check object-level authorization",
+        "The result explain a concrete cross-tenant trigger and impact",
+        "The result does not treat authentication as sufficient authorization"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Review a focused patch whose new boundary and failure behavior are covered by tests and preserve existing contracts.",
+      "expected_output": "A result that say there are no blocking findings; mention only genuine residual verification gaps while avoiding invent a finding to appear thorough.",
+      "files": [],
+      "expectations": [
+        "The result say there are no blocking findings",
+        "The result mention only genuine residual verification gaps",
+        "The result does not invent a finding to appear thorough"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #11130f;
+  --color-paper: #f2f0e7;
+  --color-paper-deep: #e7e3d6;
+  --color-acid: #c7ff2f;
+  --color-rust: #ff633e;
+  --color-steel: #62695c;
+  --font-sans: "Chivo Variable", sans-serif;
+  --font-mono: "IBM Plex Mono Variable", monospace;
+}
+
+:root {
+  color: #11130f;
+  background: #f2f0e7;
+  font-family: "Chivo Variable", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  color: #11130f;
+  background: #c7ff2f;
+}
+
+.paper-grid {
+  background-image:
+    linear-gradient(rgba(17, 19, 15, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 19, 15, 0.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.grain::before {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+.hero-orbit {
+  background:
+    radial-gradient(circle at center, transparent 0 19%, rgba(199, 255, 47, 0.95) 20% 21%, transparent 22% 35%, rgba(242, 240, 231, 0.18) 36% 37%, transparent 38%),
+    conic-gradient(from 12deg, rgba(199, 255, 47, 0.9), transparent 13%, transparent 46%, rgba(255, 99, 62, 0.9) 52%, transparent 62%);
+  animation: slow-spin 24s linear infinite;
+}
+
+.scanline {
+  background: linear-gradient(90deg, transparent, rgba(199, 255, 47, 0.7), transparent);
+  animation: scan 3.4s ease-in-out infinite;
+}
+
+.drawer-enter-active,
+.drawer-leave-active {
+  transition: opacity 180ms ease;
+}
+
+.drawer-enter-active .drawer-panel,
+.drawer-leave-active .drawer-panel {
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.drawer-enter-from,
+.drawer-leave-to {
+  opacity: 0;
+}
+
+.drawer-enter-from .drawer-panel,
+.drawer-leave-to .drawer-panel {
+  transform: translateX(100%);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: reveal 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slow-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scan {
+  0%, 100% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-orbit,
+  .scanline,
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+

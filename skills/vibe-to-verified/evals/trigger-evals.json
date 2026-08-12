@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Cursor generated a 30-file login and session refresh feature. It says the tests pass, but I want an evidence-backed merge decision before this reaches production.",
+    "should_trigger": true
+  },
+  {
+    "query": "I vibe-coded a Stripe webhook handler over the weekend. Can you verify the patch instead of trusting the AI's summary?",
+    "should_trigger": true
+  },
+  {
+    "query": "Copilot rewrote our caching layer and added its own tests. Review whether those tests actually prove the changed behavior and tell me if it is safe to merge.",
+    "should_trigger": true
+  },
+  {
+    "query": "Claude generated this database migration and the compatibility code around it. Build an evidence ledger and identify what is still unproven.",
+    "should_trigger": true
+  },
+  {
+    "query": "An agent completed the whole ticket autonomously and touched files outside the requested package. Audit the generated diff and give me MERGE, REVISE, or STOP.",
+    "should_trigger": true
+  },
+  {
+    "query": "This AI refactor claims to preserve behavior, but it deleted an integration test and mocks every dependency. Verify the claim independently.",
+    "should_trigger": true
+  },
+  {
+    "query": "Can I trust this generated password-reset implementation? Trace the auth boundary, challenge a failure path, and make a merge decision.",
+    "should_trigger": true
+  },
+  {
+    "query": "The code agent says its 18-file feature is done. Inventory the actual patch, classify its risk, and show which acceptance claims have executable evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Please do a proportionate verification of this AI-written copy-only change. It should only rename three button labels.",
+    "should_trigger": true
+  },
+  {
+    "query": "A coding model generated a concurrency fix and a stress test. I need you to decide whether the test is independent evidence or circular proof.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a password reset feature from scratch for my Vue and NestJS application.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this human-written pull request and report only concrete regressions with file and line evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Perform a focused security audit of the authorization checks in our account deletion endpoint.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find the highest-value missing tests for this checkout service and write executable test specifications.",
+    "should_trigger": false
+  },
+  {
+    "query": "Are we ready to release version 2.4 today? Check rollout, observability, migration, and rollback evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Upgrade React Router to the newest major version and preserve all existing navigation behavior.",
+    "should_trigger": false
+  },
+  {
+    "query": "What does the phrase vibe coding mean, and where did it come from?",
+    "should_trigger": false
+  },
+  {
+    "query": "Proofread this blog post about AI-generated code and improve the tone without changing its argument.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare the factual accuracy of these two chatbot answers about the French Revolution.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run the formatter and type checker on my small handwritten utility patch, then fix any reported errors.",
+    "should_trigger": false
+  }
+]

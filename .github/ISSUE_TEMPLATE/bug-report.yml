@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a catalog, CLI, validation, or Skill defect.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Skill content
+        - CLI
+        - Web catalog
+        - Validation or CI
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the command or prompt, expected result, actual result, and relevant files.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS, Node version, agent and version if relevant
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Paste concise logs or screenshots. Remove credentials and private data first.

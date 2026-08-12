@@ -1,0 +1,50 @@
+{
+  "skill_name": "test-gap-hunter",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "A payment job now retries on timeout. Existing tests cover one successful charge.",
+      "expected_output": "A result that identify duplicate side effects as an invariant; propose a retry/ambiguous-result integration test; specify observable assertions while avoiding recommend only another happy-path unit test.",
+      "files": [],
+      "expectations": [
+        "The result identify duplicate side effects as an invariant",
+        "The result propose a retry/ambiguous-result integration test",
+        "The result specify observable assertions",
+        "The result does not recommend only another happy-path unit test"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A component snapshot updates after the empty state was accidentally removed.",
+      "expected_output": "A result that inspect what the snapshot proves; recommend a semantic empty-state assertion while avoiding accept the snapshot update as sufficient.",
+      "files": [],
+      "expectations": [
+        "The result inspect what the snapshot proves",
+        "The result recommend a semantic empty-state assertion",
+        "The result does not accept the snapshot update as sufficient"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Add tests only to move coverage from 89% to 90%; the uncovered line is a framework-generated guard.",
+      "expected_output": "A result that explain the low confidence value; omit the case if it does not protect behavior while avoiding optimize solely for the metric.",
+      "files": [],
+      "expectations": [
+        "The result explain the low confidence value",
+        "The result omit the case if it does not protect behavior",
+        "The result does not optimize solely for the metric"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "The change is a pure function with boundary, invalid-input, property, and regression tests already covering the behavior delta.",
+      "expected_output": "A concise conclusion that existing evidence covers the behavior delta and no material test gap remains.",
+      "files": [],
+      "expectations": [
+        "The result states that no material gap was found",
+        "The result explains what the existing tests prove",
+        "The result does not invent redundant end-to-end tests"
+      ]
+    }
+  ]
+}

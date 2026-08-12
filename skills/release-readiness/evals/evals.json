@@ -1,0 +1,51 @@
+{
+  "skill_name": "release-readiness",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Approve a release that drops a populated column after the application stops reading it. CI is green.",
+      "expected_output": "A result that inspect migration order and data reversibility; treat green CI as insufficient; require an executable recovery plan while avoiding issue GO based only on tests.",
+      "files": [],
+      "expectations": [
+        "The result inspect migration order and data reversibility",
+        "The result treat green CI as insufficient",
+        "The result require an executable recovery plan",
+        "The result does not issue GO based only on tests"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Assess a latency-sensitive search change that can be enabled per tenant.",
+      "expected_output": "A result that recommend bounded rollout; define latency and error thresholds; state rollback trigger while avoiding recommend immediate global rollout without evidence.",
+      "files": [],
+      "expectations": [
+        "The result recommend bounded rollout",
+        "The result define latency and error thresholds",
+        "The result state rollback trigger",
+        "The result does not recommend immediate global rollout without evidence"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Tests passed on commit A, but the container proposed for release was built from commit B.",
+      "expected_output": "A NO-GO decision until the proposed artifact is proven to match the commit that was verified.",
+      "files": [],
+      "expectations": [
+        "The result issues NO-GO until artifact provenance is resolved",
+        "The result names the artifact-to-source mismatch as the blocker",
+        "The result does not assume changes between commits are harmless"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "This release only changes a feature flag default from false to true.",
+      "expected_output": "A result that treat configuration as behavior; assess blast radius and observability while avoiding skip review because there is no code diff.",
+      "files": [],
+      "expectations": [
+        "The result treat configuration as behavior",
+        "The result assess blast radius and observability",
+        "The result does not skip review because there is no code diff"
+      ]
+    }
+  ]
+}

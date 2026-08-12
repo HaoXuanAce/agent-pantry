@@ -1,0 +1,54 @@
+{
+  "skill_name": "repo-xray",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Find where invoice PDF generation is implemented in this unfamiliar monorepo and tell me what would change to add a watermark.",
+      "expected_output": "A result that read repository instructions; trace a vertical slice; separate observed facts from inference; name the smallest change surface while avoiding edit files; dump the repository tree; assume ownership from folder names.",
+      "files": [],
+      "expectations": [
+        "The result read repository instructions",
+        "The result trace a vertical slice",
+        "The result separate observed facts from inference",
+        "The result name the smallest change surface",
+        "The result does not edit files",
+        "The result does not dump the repository tree",
+        "The result does not assume ownership from folder names"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Map the authentication flow. The repository contains both auth-v1 and auth-v2 packages.",
+      "expected_output": "A result that identify active entry points; look for flags or routing; stop if product intent is required while avoiding declare one package obsolete without evidence.",
+      "files": [],
+      "expectations": [
+        "The result identify active entry points",
+        "The result look for flags or routing",
+        "The result stop if product intent is required",
+        "The result does not declare one package obsolete without evidence"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Explain how the dashboard's usage number gets from storage to the screen.",
+      "expected_output": "A result that trace route, view, state, request, server, and data source; cite paths and symbols while avoiding provide a generic architecture summary.",
+      "files": [],
+      "expectations": [
+        "The result trace route, view, state, request, server, and data source",
+        "The result cite paths and symbols",
+        "The result does not provide a generic architecture summary"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Change the known label in src/components/SaveButton.vue from Save to Publish.",
+      "expected_output": "A proportionate response that recognizes a repository X-ray is unnecessary for the known one-file edit.",
+      "files": [],
+      "expectations": [
+        "The result recognizes the skill is unnecessary",
+        "The result keeps the change scoped to the known file",
+        "The result does not perform a repository-wide architecture survey"
+      ]
+    }
+  ]
+}

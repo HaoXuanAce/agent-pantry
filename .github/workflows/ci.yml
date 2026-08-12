@@ -1,0 +1,47 @@
+name: Quality gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run quality gates
+        run: pnpm check
+
+      - name: Build catalog and CLI
+        run: |
+          pnpm --filter @agent-pantry/web build
+          pnpm --filter agent-pantry build
+
+      - name: Inspect publishable CLI artifact
+        run: |
+          mkdir -p .artifacts
+          cd packages/cli
+          pnpm pack --pack-destination ../../.artifacts
+          tar -tf ../../.artifacts/agent-pantry-*.tgz | grep 'package/catalog/skills/vibe-to-verified/SKILL.md'
+          tar -tf ../../.artifacts/agent-pantry-*.tgz | grep 'package/README.md'
+

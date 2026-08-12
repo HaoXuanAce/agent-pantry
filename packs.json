@@ -1,0 +1,26 @@
+[
+  {
+    "id": "trust-ai-code",
+    "name": "Trust AI Code",
+    "description": "Review generated patches, find concrete defects, expose hidden test gaps, and audit protected boundaries before merge.",
+    "skills": ["vibe-to-verified", "pull-request-reviewer", "test-gap-hunter", "security-first-review"]
+  },
+  {
+    "id": "ship-without-surprises",
+    "name": "Ship Without Surprises",
+    "description": "Protect contracts, database changes, browser journeys, and the final deployment decision.",
+    "skills": ["api-contract-auditor", "zero-downtime-db-migration", "browser-acceptance-evidence", "release-readiness"]
+  },
+  {
+    "id": "production-first-aid",
+    "name": "Production First Aid",
+    "description": "Understand an unfamiliar system, diagnose failures, and investigate incidents without making the situation worse.",
+    "skills": ["repo-xray", "bug-triage", "incident-response-investigator"]
+  },
+  {
+    "id": "safe-change-kit",
+    "name": "Safe Change Kit",
+    "description": "Upgrade dependencies and reconstruct interfaces with explicit change boundaries and verification evidence.",
+    "skills": ["dependency-upgrade-surgeon", "frontend-reconstruction", "browser-acceptance-evidence"]
+  }
+]

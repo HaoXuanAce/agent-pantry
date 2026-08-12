@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/HaoXuanAce/agent-pantry/security/advisories/new
+    about: Privately report a vulnerability in the repository, CLI, or a bundled helper.

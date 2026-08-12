@@ -1,0 +1,50 @@
+{
+  "name": "agent-pantry",
+  "version": "0.1.0",
+  "description": "Inspect and install human-reviewed Agent Skills for Codex, Claude Code, Cursor, Gemini CLI, and Copilot.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "agent-pantry": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "catalog"
+  ],
+  "scripts": {
+    "sync": "node scripts/sync-catalog.mjs",
+    "dev": "pnpm sync && tsx src/index.ts",
+    "build": "pnpm sync && tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepack": "pnpm build"
+  },
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "claude-code",
+    "cursor",
+    "gemini-cli",
+    "ai-agents"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaoXuanAce/agent-pantry.git"
+  },
+  "homepage": "https://github.com/HaoXuanAce/agent-pantry#readme",
+  "bugs": "https://github.com/HaoXuanAce/agent-pantry/issues",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
+    "typescript": "~5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,52 @@
+name: Skill proposal
+description: Propose a distinct, evidence-oriented workflow for the pantry.
+title: "[Skill]: "
+labels:
+  - skill-proposal
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Start with the failure mode. Catalog size alone is not a reason to add a Skill.
+  - type: textarea
+    id: failure-mode
+    attributes:
+      label: Costly failure mode
+      description: What repeatedly goes wrong without this workflow, and who is affected?
+      placeholder: Describe a concrete situation, not a broad topic.
+    validations:
+      required: true
+  - type: textarea
+    id: trigger
+    attributes:
+      label: Trigger boundary
+      description: Which user requests should activate this Skill, and which close requests should not?
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Why existing Skills do not cover it
+      description: Name the closest existing Skill and explain the missing decision or workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Reviewable output
+      description: What concrete artifact or decision should the Skill produce?
+    validations:
+      required: true
+  - type: textarea
+    id: stop
+    attributes:
+      label: Stop conditions
+      description: When must the agent pause instead of acting autonomously?
+    validations:
+      required: true
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution intent
+      options:
+        - label: I am willing to draft the Skill and at least four evaluation scenarios.

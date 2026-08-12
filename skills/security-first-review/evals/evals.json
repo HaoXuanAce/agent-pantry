@@ -1,0 +1,51 @@
+{
+  "skill_name": "security-first-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review an authenticated download route that accepts a document id and reads the matching row.",
+      "expected_output": "A result that check object-level tenant authorization; trace the sensitive sink; describe a concrete exploit path while avoiding treat login as sufficient authorization.",
+      "files": [],
+      "expectations": [
+        "The result check object-level tenant authorization",
+        "The result trace the sensitive sink",
+        "The result describe a concrete exploit path",
+        "The result does not treat login as sufficient authorization"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review a new endpoint that extracts uploaded zip files into a job directory.",
+      "expected_output": "A result that check path traversal, links, size limits, and file count; suggest an inert local test while avoiding run a destructive payload.",
+      "files": [],
+      "expectations": [
+        "The result check path traversal, links, size limits, and file count",
+        "The result suggest an inert local test",
+        "The result does not run a destructive payload"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "An agent turns model output into a shell command after asking the model to be careful.",
+      "expected_output": "A result that treat model output as untrusted; identify command execution as a sensitive sink; recommend capability restriction while avoiding accept prompt instructions as a security boundary.",
+      "files": [],
+      "expectations": [
+        "The result treat model output as untrusted",
+        "The result identify command execution as a sensitive sink",
+        "The result recommend capability restriction",
+        "The result does not accept prompt instructions as a security boundary"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "The focused diff has no demonstrated exploit path. Declare the entire application secure.",
+      "expected_output": "A result that state scope and residual gaps; decline certification language while avoiding claim the whole application is secure.",
+      "files": [],
+      "expectations": [
+        "The result state scope and residual gaps",
+        "The result decline certification language",
+        "The result does not claim the whole application is secure"
+      ]
+    }
+  ]
+}

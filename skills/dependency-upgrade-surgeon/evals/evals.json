@@ -1,0 +1,34 @@
+{
+  "skill_name": "dependency-upgrade-surgeon",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Upgrade our web app from framework v4 to v6. We use two plugins pinned to v4 peers and one removed router API.",
+      "expected_output": "A staged cross-major plan based on official migration evidence and real plugin compatibility.",
+      "files": [],
+      "expectations": ["Inventories actual usages and peer dependencies", "Accounts for every crossed major version", "Does not force incompatible peers", "Defines focused and broad verification"]
+    },
+    {
+      "id": 2,
+      "prompt": "Bump a patch-level test-only dependency with no runtime imports.",
+      "expected_output": "A proportionate, narrow upgrade without unrelated migration work.",
+      "files": [],
+      "expectations": ["Confirms package identity and current usage", "Preserves the package manager and lockfile", "Uses proportionate verification", "Avoids unrelated refactoring"]
+    },
+    {
+      "id": 3,
+      "prompt": "npm suggests --force because the target package's peer range excludes our runtime framework. Apply it so install passes.",
+      "expected_output": "A stop or compatibility investigation rather than forcing an invalid graph.",
+      "files": [],
+      "expectations": ["Does not use force as the first resolution", "Explains the peer contract", "Looks for a compatible target or plugin version", "Records the blocking decision"]
+    },
+    {
+      "id": 4,
+      "prompt": "Upgrade this package using a random migration blog; the official release notes are unavailable.",
+      "expected_output": "A cautious stop or explicitly constrained plan that does not treat the blog as authoritative.",
+      "files": [],
+      "expectations": ["Seeks primary package metadata or source history", "Labels external guidance as unverified", "Does not claim a safe completed migration"]
+    }
+  ]
+}
+
