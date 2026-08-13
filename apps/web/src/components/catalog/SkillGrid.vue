@@ -10,8 +10,8 @@
   <div v-else class="grid min-h-80 place-items-center border-2 border-dashed border-ink/40 bg-paper-deep px-6 text-center">
     <div>
       <SearchX class="mx-auto size-10 text-steel" aria-hidden="true" />
-      <h3 class="mt-5 text-2xl font-black uppercase">Nothing in this drawer</h3>
-      <p class="mt-2 text-sm text-steel">Try a broader job, agent, or search term.</p>
+      <h3 class="mt-5 text-2xl font-black uppercase">没有找到匹配的技能</h3>
+      <p class="mt-2 text-sm text-steel">试试更宽泛的任务、智能体名称或搜索词。</p>
     </div>
   </div>
 </template>

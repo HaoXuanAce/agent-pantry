@@ -2,7 +2,9 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
 const root = resolve(import.meta.dirname, '..')
-const skillName = 'vibe-to-verified'
+const skillName = process.argv[2] ?? 'vibe-to-verified'
+
+if (!/^[a-z0-9-]+$/.test(skillName)) throw new Error(`Invalid skill name: ${skillName}`)
 const skillFile = await readFile(resolve(root, 'skills', skillName, 'SKILL.md'), 'utf8')
 const description = skillFile.match(/^description:\s*(.+)$/m)?.[1]
 

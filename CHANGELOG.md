@@ -8,6 +8,8 @@ The project follows [Semantic Versioning](https://semver.org/).
 
 ### Added
 
+- Seven China-focused Skills for payment callbacks, mini program releases, mobile WebView acceptance, mainland development environments, spreadsheet imports, promotion rules, and Chinese product localization.
+- Three curated packs for launching products in China, protecting commerce systems, and rescuing mainland or corporate development environments.
 - Six production-focused Skills: AI patch verification, Skill supply-chain audit, dependency upgrades, zero-downtime migrations, incident investigation, and browser acceptance evidence.
 - Four curated mission packs.
 - Standard `evals/evals.json` suites with explicit expected outputs and expectations.

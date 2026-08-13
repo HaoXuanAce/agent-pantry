@@ -12,6 +12,7 @@
   <a href="#quick-start">Quick start</a> ·
   <a href="README.md">简体中文</a> ·
   <a href="GITHUB_PUBLISH_GUIDE.md">Publish guide</a> ·
+  <a href="NPM_PUBLISH_GUIDE.md">npm publishing</a> ·
   <a href="CONTRIBUTING.md">Contribute</a>
 </p>
 
@@ -36,7 +37,7 @@ Every skill in this repository has:
 - at least four structured evaluation scenarios with explicit expectations;
 - no runtime dependency, account, API key, or telemetry.
 
-The result is deliberately focused: **14 Skills you can read and review**, not 800 prompts you cannot inspect. `reviewed` means the instructions and eval definitions passed repository checks; it does not claim a model benchmark score.
+The result is deliberately focused: **21 Skills you can read and review**, not 800 prompts you cannot inspect. Seven China-focused workflows cover payment callbacks, mini program releases, in-app H5, mainland development networks, spreadsheet imports, promotion pricing, and Chinese product localization. `reviewed` means the instructions and eval definitions passed repository checks; it does not claim a model benchmark score.
 
 ## Quick start
 
@@ -97,6 +98,13 @@ The Skill should produce a decision tied to observed evidence—not another pros
 | [`frontend-reconstruction`](skills/frontend-reconstruction) | Rebuild a visual reference | Responsive UI, real states, visual QA notes |
 | [`browser-acceptance-evidence`](skills/browser-acceptance-evidence) | Prove a browser journey | Journey results, screenshots, runtime evidence |
 | [`release-readiness`](skills/release-readiness) | Decide whether a change can ship | GO/NO-GO decision, rollout and rollback |
+| [`payment-callback-guardian`](skills/payment-callback-guardian) | Secure payment and refund callbacks | Trust chain, idempotent state design, reconciliation |
+| [`mini-program-release-readiness`](skills/mini-program-release-readiness) | Prepare a mini program submission | Release decision, privacy gaps, device matrix |
+| [`china-mobile-webview-acceptance`](skills/china-mobile-webview-acceptance) | Validate H5 inside Chinese mobile apps | Container matrix, authorization trace, device verdict |
+| [`china-dev-environment-doctor`](skills/china-dev-environment-doctor) | Diagnose mainland and corporate network tooling | Layered diagnosis, effective config, reversible repair |
+| [`spreadsheet-import-guardian`](skills/spreadsheet-import-guardian) | Prevent CSV/XLSX import corruption | Import contract, safety rules, idempotent recovery |
+| [`promotion-rule-verifier`](skills/promotion-rule-verifier) | Verify promotion pricing and refunds | Pricing pipeline, boundary matrix, refund allocation |
+| [`chinese-product-localization`](skills/chinese-product-localization) | Localize the whole Chinese product experience | Terminology gaps, formats, UI acceptance |
 
 ## Curated packs
 
@@ -113,6 +121,9 @@ npx agent-pantry pack add trust-ai-code --dry-run
 | `ship-without-surprises` | API contracts, DB migration, browser acceptance, release decision |
 | `production-first-aid` | Repository map, bug triage, incident investigation |
 | `safe-change-kit` | Dependency upgrades, frontend reconstruction, browser acceptance |
+| `china-product-launch` | Chinese localization, in-app H5, mini programs, browser acceptance, release decision |
+| `china-commerce-core` | Promotion pricing, payment callbacks, spreadsheet imports, API contracts, release decision |
+| `mainland-dev-rescue` | Mainland network diagnosis, dependency upgrades, Skill supply-chain audit |
 
 ## Agent compatibility
 

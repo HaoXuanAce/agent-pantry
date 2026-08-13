@@ -25,7 +25,7 @@ agent-pantry
 直接复制这一版：
 
 ```text
-中文优先的 Agent Skills 工具箱：14 个可审阅工作流、结构化评测、任务包与安全安装 CLI。支持 Codex、Claude Code、Cursor、Gemini CLI 和 Copilot。
+中文优先的 Agent Skills 工具箱：21 个可审阅工作流，覆盖中国开发者高频场景、结构化评测、任务包与安全安装 CLI。支持 Codex、Claude Code、Cursor、Gemini CLI 和 Copilot。
 ```
 
 如果希望更短，可以使用：
@@ -45,7 +45,7 @@ https://<你的GitHub用户名>.github.io/agent-pantry/
 例如用户名是 `haoxuan-ai`：
 
 ```text
-https://haoxuan-ai.github.io/agent-pantry/
+https://HaoXuanAce.github.io/agent-pantry/
 ```
 
 ### Topics
@@ -124,7 +124,7 @@ pnpm check
 正确结果应包含：
 
 ```text
-Validated 14 skills and 4 packs.
+Validated 21 skills and 7 packs.
 Test Files  1 passed
 Tests  8 passed
 ```
@@ -219,7 +219,7 @@ git remote -v
 如果安装并登录了 `gh`，可以不走网页建仓流程：
 
 ```bash
-gh repo create agent-pantry --public --source=. --remote=origin --push --description "中文优先的 Agent Skills 工具箱：14 个可审阅工作流、结构化评测、任务包与安全安装 CLI。"
+gh repo create agent-pantry --public --source=. --remote=origin --push --description "中文优先的 Agent Skills 工具箱：21 个可审阅工作流，覆盖中国开发者高频场景、结构化评测、任务包与安全安装 CLI。"
 ```
 
 网页方式和 `gh` 方式二选一，不要重复创建仓库。
@@ -233,7 +233,7 @@ gh repo create agent-pantry --public --source=. --remote=origin --push --descrip
 
 质量门禁会运行：
 
-- 14 个 Skills 和 4 个 Packs 的一致性校验；
+- 21 个 Skills 和 7 个 Packs 的一致性校验；
 - Vue 与 CLI 的 TypeScript 检查；
 - CLI 自动化测试；
 - Vue 和 CLI 构建；
@@ -265,7 +265,7 @@ GitHub 官方流程见 [Configuring a publishing source](https://docs.github.com
 部署后至少检查：
 
 - 首页能打开，不是 404；
-- 14 个 Skill 卡片全部存在；
+- 21 个 Skill 卡片全部存在；
 - 搜索和阶段筛选可用；
 - 点击卡片可以打开详情；
 - 复制安装命令正常；
@@ -372,8 +372,8 @@ Agent Pantry v0.1.0 — 中文优先的 Agent Skills 工具箱
 ```markdown
 Agent Pantry 首次公开发布。
 
-- 14 个可审阅 Agent Skills
-- 4 个任务组合包
+- 21 个可审阅 Agent Skills
+- 7 个任务组合包
 - 支持 Codex、Claude Code、Cursor、Gemini CLI 和 GitHub Copilot
 - 每个 Skill 至少 4 个结构化评测场景
 - 提供搜索、检查、dry-run、diff 和安全替换 CLI
@@ -389,25 +389,11 @@ GitHub Release 官方流程见 [Managing releases](https://docs.github.com/en/re
 
 注意：普通仓库 Release 使用 `v0.1.0`。CLI 的 npm 发布工作流使用另一种标签 `cli-v0.1.0`，不要在还没准备 npm Token 和包名时创建这个标签。
 
-## 十三、npm CLI 发布以后再做
+## 十三、现在发布 npm CLI
 
-GitHub 仓库上线不依赖 npm，建议先获得真实用户反馈，再发布 CLI。
+项目已经准备了首次发布工作流、后续 OIDC Trusted Publishing 工作流、中文 npm 首页和精确清理步骤。不要直接推送 `cli-v0.1.0` 标签；首次包还没有 Trusted Publisher，必须先完成 bootstrap。
 
-发布前需要：
-
-1. 在 npmjs.com 确认 `agent-pantry` 包名是否可用。
-2. 登录 npm 并启用双重验证。
-3. 在 GitHub **Settings → Secrets and variables → Actions** 添加 `NPM_TOKEN`。
-4. 确认 `packages/cli/package.json` 版本正确。
-5. 确认 `pnpm check` 和打包检查通过。
-6. 创建并推送与版本完全一致的标签：
-
-```bash
-git tag cli-v0.1.0
-git push origin cli-v0.1.0
-```
-
-这会触发 `.github/workflows/release-cli.yml`。发布前不要测试性地创建 `cli-v*` 标签，因为它代表真实 npm 发布意图。
+请严格按照独立的 [npm 首次发布与后续自动发布指南](NPM_PUBLISH_GUIDE.md) 操作。首次发布成功后，要立即撤销一次性 Token，并删除 bootstrap 工作流。
 
 ## 十四、首次推广文案
 
@@ -416,9 +402,9 @@ git push origin cli-v0.1.0
 ```text
 我做了一个中文优先的 Agent Skills 工具箱：Agent Pantry。
 
-它不是几百条 Prompt 的堆积，而是 14 个可以完整读完的工作流。每个 Skill 都有明确触发条件、停止条件、输出契约和至少 4 个结构化评测场景。
+它不是几百条 Prompt 的堆积，而是 21 个可以完整读完的工作流。每个 Skill 都有明确触发条件、停止条件、输出契约和至少 4 个结构化评测场景。
 
-目前包含 AI 生成代码验收、Skill 供应链审计、依赖升级、零停机数据库迁移、线上事故调查、代码审查、测试缺口分析和发布检查等工作流，支持 Codex、Claude Code、Cursor、Gemini CLI 与 Copilot。
+目前包含 AI 生成代码验收、Skill 供应链审计、支付回调、小程序发布、App 内 H5、国内开发网络、表格导入、营销计价、中文产品本地化和发布检查等工作流，支持 Codex、Claude Code、Cursor、Gemini CLI 与 Copilot。
 
 项目完全开源、无账号、无遥测，也没有用虚构的 98 分包装质量。
 
@@ -431,7 +417,7 @@ git push origin cli-v0.1.0
 ### 简短版本
 
 ```text
-Agent Pantry：中文优先、可审阅、可验证的 Agent Skills 工具箱。14 个真实开发工作流，支持主流编程 Agent，无账号、无遥测。欢迎试用和提 Skill 建议：<仓库地址>
+Agent Pantry：中文优先、可审阅、可验证的 Agent Skills 工具箱。21 个真实开发工作流，重点覆盖中国开发者高频场景，支持主流编程 Agent，无账号、无遥测。欢迎试用和提 Skill 建议：<仓库地址>
 ```
 
 推广时优先展示一个具体问题如何被解决，例如“如何验收 AI 一次生成的 30 文件改动”，不要只发仓库链接或 Skills 数量。
@@ -484,4 +470,3 @@ Star 无法被保证，但可以通过“打开仓库立即看懂、复制命令
 - [ ] 发布了 `v0.1.0`
 - [ ] 个人主页已置顶仓库
 - [ ] 第一篇推广内容包含真实用例
-

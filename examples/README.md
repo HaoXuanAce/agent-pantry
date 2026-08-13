@@ -67,3 +67,47 @@ Use zero-downtime-db-migration for this schema change and backfill. Establish da
 ```
 
 Before release, hand the resulting plan to `release-readiness` for an independent GO or NO-GO decision.
+
+## 审查支付回调重复发货
+
+安装：
+
+```bash
+npx skills add HaoXuanAce/agent-pantry --skill payment-callback-guardian
+```
+
+交给 Agent：
+
+```text
+对当前支付异步通知处理器使用 payment-callback-guardian。先确认渠道与 API 版本，
+按当前官方契约检查原始报文、验签、解密、商户号、订单号、金额和币种；再检查数据库级幂等、
+允许的资金状态转移和发货/发券副作用。覆盖重复、并发、乱序、提交前后崩溃与回调缺失，
+最后给出回调信任链、状态机、对账方案和可执行测试矩阵。不要使用真实生产密钥。
+```
+
+## 小程序提审前检查
+
+```text
+对当前版本使用 mini-program-release-readiness。绑定 Git 提交、构建产物、AppID 和生产后端，
+从代码与依赖实际调用反查隐私接口，核对合法域名、登录授权、分包和版本更新；
+用 iOS/Android 真机覆盖弱网、权限拒绝、支付与从后台恢复。没有上传或发布授权时只给决定和清单，
+不要执行提审。结论只能是：可以提审、修复后提审或暂缓。
+```
+
+## 排查国内开发环境安装失败
+
+```text
+使用 china-dev-environment-doctor 调查这次 pnpm/Docker/Git 下载失败。保留原始错误，
+分层检查 DNS、连接、代理、TLS、企业 CA、Registry、配置优先级、守护进程和锁文件实际下载地址。
+一次只改变一个因素，所有配置变更必须可回滚。不要清空全部缓存，不要设置 strict-ssl=false，
+也不要把来源不明镜像当作最终修复。
+```
+
+## 验证满减与退款规则
+
+```text
+使用 promotion-rule-verifier 把这组满减、优惠券、会员折扣、运费和退款要求写成可执行规则契约。
+列出计算顺序、优惠基数、互斥叠加、最小货币单位、舍入与同价决胜规则；覆盖门槛前后一分、
+活动时间边界、库存并发、支付超时和多次部分退款。规则有歧义时列出候选结果并停止等待产品确认，
+不要替产品偷偷选择答案。
+```

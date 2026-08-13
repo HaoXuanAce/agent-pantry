@@ -2,14 +2,14 @@
   <button
     type="button"
     class="group relative flex min-h-96 flex-col overflow-hidden border-2 border-ink bg-paper p-0 text-left transition-all hover:-translate-y-1 hover:bg-white hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust"
-    :aria-label="`Inspect ${skill.name}`"
+    :aria-label="`查看 ${skill.name}`"
     @click="emit('select', skill)"
   >
     <div class="flex w-full items-center justify-between border-b border-ink px-5 py-3 font-mono text-xs font-semibold uppercase tracking-widest">
       <span>{{ skill.index }}</span>
       <span class="flex items-center gap-2">
         <span class="size-2 rounded-full bg-acid ring-1 ring-ink"></span>
-        {{ skill.maturity }} / {{ skill.evalCount }} cases
+        已审阅 / {{ skill.evalCount }} 个场景
       </span>
     </div>
 

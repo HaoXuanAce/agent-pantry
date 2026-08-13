@@ -1,25 +1,27 @@
 import { computed, onBeforeUnmount, onMounted, shallowRef } from 'vue'
 import catalogData from '../../../../catalog.json'
 import packsData from '../../../../packs.json'
+import { packTranslations, skillTranslations } from '../locales/zh-CN'
 import type { Skill, SkillPack } from '../types/skill'
 
-const skills = catalogData as Skill[]
-const packs = packsData as SkillPack[]
+const skills = (catalogData as Skill[]).map((skill) => ({ ...skill, ...skillTranslations[skill.id] }))
+const packs = (packsData as SkillPack[]).map((pack) => ({ ...pack, ...packTranslations[pack.id] }))
 
 export function useSkillCatalog() {
   const query = shallowRef('')
-  const phase = shallowRef('All phases')
-  const sort = shallowRef('Recommended')
+  const phase = shallowRef('全部阶段')
+  const sort = shallowRef('推荐排序')
   const selectedSkill = shallowRef<Skill | null>(null)
 
-  const phases = computed(() => ['All phases', ...new Set(skills.map((skill) => skill.phase))])
+  const phases = computed(() => ['全部阶段', ...new Set(skills.map((skill) => skill.phase))])
 
   const visibleSkills = computed(() => {
     const normalizedQuery = query.value.trim().toLowerCase()
     const matches = skills.filter((skill) => {
-      const matchesPhase = phase.value === 'All phases' || skill.phase === phase.value
+      const matchesPhase = phase.value === '全部阶段' || skill.phase === phase.value
       const searchableText = [
         skill.name,
+        skill.id,
         skill.tagline,
         skill.description,
         skill.phase,
@@ -35,7 +37,7 @@ export function useSkillCatalog() {
     })
 
     return [...matches].sort((first, second) => {
-      if (sort.value === 'A–Z') return first.name.localeCompare(second.name)
+      if (sort.value === '名称排序') return first.name.localeCompare(second.name, 'zh-CN')
       if (first.featured !== second.featured) return Number(second.featured) - Number(first.featured)
       return first.index.localeCompare(second.index)
     })

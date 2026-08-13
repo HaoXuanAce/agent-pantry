@@ -3,10 +3,10 @@
     <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
       <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div>
-          <p class="font-mono text-xs font-semibold uppercase tracking-widest text-rust">The pantry rules</p>
-          <h2 class="mt-5 text-5xl font-black uppercase leading-none tracking-tight sm:text-6xl">Less prompt.<br />More method.</h2>
+          <p class="font-mono text-xs font-semibold uppercase tracking-widest text-rust">Agent Pantry 准则</p>
+          <h2 class="mt-5 text-5xl font-black uppercase leading-none tracking-tight sm:text-6xl">少一点提示词，<br />多一点方法论。</h2>
           <p class="mt-6 max-w-md leading-relaxed text-steel">
-            A good skill does not make an agent sound smarter. It changes the sequence of work so mistakes become harder to make.
+            好的 Skill 不是让智能体听起来更聪明，而是重塑工作顺序，让错误更难发生。
           </p>
         </div>
 
@@ -27,21 +27,20 @@
 <script setup lang="ts">
 const principles = [
   {
-    title: 'Evidence before confidence',
-    description: 'Claims point to files, commands, diffs, or observed behavior. The agent states what it knows and what it inferred.',
+    title: '证据先于信心',
+    description: '每项结论都应指向文件、命令、差异或实际观察；智能体必须说明哪些是事实，哪些是推断。',
   },
   {
-    title: 'Stop conditions are features',
-    description: 'Every workflow says when to pause, ask, or refuse. Autonomy without a boundary is just fast uncertainty.',
+    title: '停止条件也是功能',
+    description: '每个工作流都要说明何时暂停、询问或拒绝。没有边界的自主，只是在更快地制造不确定性。',
   },
   {
-    title: 'Outputs have a contract',
-    description: 'A skill defines what done looks like so results are reviewable, comparable, and useful to the next person.',
+    title: '输出必须有约定',
+    description: 'Skill 要明确什么才算完成，让结果可以审阅、比较，也能被下一位协作者继续使用。',
   },
   {
-    title: 'Small enough to inspect',
-    description: 'No mystery bundles. Read the complete instructions in minutes, keep the parts you trust, and fork the rest.',
+    title: '保持足够小，才能审阅',
+    description: '拒绝神秘的打包内容。几分钟内读完全部说明，保留你信任的部分，其余部分随时复刻修改。',
   },
 ]
 </script>
-

@@ -1,0 +1,22 @@
+[
+  {"query":"微信支付 API v3 异步通知会重复发送，我们的发券逻辑偶尔执行两次，请审查验签、状态机和幂等实现。","should_trigger":true},
+  {"query":"支付宝回调显示 TRADE_SUCCESS，但本地订单金额和通知金额不一致，这种情况是否还能更新为已支付？","should_trigger":true},
+  {"query":"支付成功后订单一直停留在待支付，渠道后台有交易记录，请从回调、主动查询和对账链路定位。","should_trigger":true},
+  {"query":"退款通知比支付成功通知更早到达，后到的成功回调把 REFUNDED 又覆盖成 PAID，怎么设计状态机？","should_trigger":true},
+  {"query":"两个服务实例同时消费同一个银联通知，库存和积分都扣了两次，请给数据库级幂等与恢复方案。","should_trigger":true},
+  {"query":"我们的支付回调先解析 JSON 再验签，平台升级证书后偶发失败，请审查原始报文和证书选择流程。","should_trigger":true},
+  {"query":"回调写订单成功后消息队列发送失败，渠道已经收到成功响应，怎样确保后续发货可以安全补偿？","should_trigger":true},
+  {"query":"手工补单任务和微信支付通知可能并发执行，如何保证资金状态只推进一次且权益不会重复发放？","should_trigger":true},
+  {"query":"支付平台因超时连续重试十次相同通知，接口应该怎样响应，并证明数据库和下游副作用只有一次？","should_trigger":true},
+  {"query":"请为支付和退款异步回调建立测试矩阵，覆盖篡改签名、未知订单、金额冲突、乱序和处理中崩溃。","should_trigger":true},
+  {"query":"请把收银台的微信支付按钮改成品牌绿色，并调整二维码加载中的骨架屏和提示文字。","should_trigger":false},
+  {"query":"我们准备申请微信支付商户号，需要哪些企业资质和开户注册材料，请整理办理流程。","should_trigger":false},
+  {"query":"用户点击支付按钮没有弹出收银台，浏览器控制台报 JSSDK not configured，请修前端唤起流程。","should_trigger":false},
+  {"query":"给订单详情页增加支付方式图标、倒计时和取消支付按钮，只修改 Vue 组件的视觉交互。","should_trigger":false},
+  {"query":"营销活动满 300 减 50 再叠加九五折会员，产品没写计算顺序，请验证最终成交价。","should_trigger":false},
+  {"query":"支付服务调用数据库时报连接池耗尽，所有普通查询也变慢，请定位数据库性能和连接泄漏。","should_trigger":false},
+  {"query":"请分析支付宝和微信支付的市场份额、手续费与目标用户，给新产品推荐接入哪一个渠道。","should_trigger":false},
+  {"query":"小程序支付页在 iPhone 键盘弹出后提交按钮被遮挡，需要做安全区和真机交互验收。","should_trigger":false},
+  {"query":"把一份银行流水 CSV 导入后台时账号前导零消失并出现重复记录，请重构批量导入。","should_trigger":false},
+  {"query":"我们想把订单从待支付改名为等待付款，并统一简体中文、繁体中文和英文的界面文案。","should_trigger":false}
+]

@@ -1,5 +1,5 @@
 <template>
-  <section class="border-b border-ink bg-acid" aria-label="Project facts">
+  <section class="border-b border-ink bg-acid" aria-label="项目概览">
     <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-ink border-x border-ink md:grid-cols-4 md:divide-y-0">
       <div v-for="fact in facts" :key="fact.label" class="px-5 py-5 sm:px-8">
         <p class="font-mono text-xs font-semibold uppercase tracking-widest">{{ fact.label }}</p>
@@ -17,9 +17,9 @@ const props = defineProps<{
 }>()
 
 const facts = computed(() => [
-  { label: 'Inventory', value: `${props.skillCount} reviewed skills` },
-  { label: 'Format', value: 'Open SKILL.md' },
-  { label: 'Install', value: 'One command' },
-  { label: 'Claims', value: 'No fake scores' },
+  { label: '技能目录', value: `${props.skillCount} 个已审阅技能` },
+  { label: '文件格式', value: '开放的 SKILL.md' },
+  { label: '安装方式', value: '一条命令' },
+  { label: '评测声明', value: '拒绝虚假评分' },
 ])
 </script>

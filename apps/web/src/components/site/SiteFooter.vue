@@ -7,19 +7,19 @@
             <span class="grid size-10 place-items-center border-2 border-ink bg-acid font-mono text-sm font-bold shadow-md">AP</span>
             <span class="text-xl font-black uppercase">Agent Pantry</span>
           </div>
-          <p class="mt-4 max-w-lg text-sm leading-relaxed text-steel">Open workflows for agents that do real work. Fork freely, inspect everything, contribute evidence.</p>
+          <p class="mt-4 max-w-lg text-sm leading-relaxed text-steel">为真正干活的智能体提供开放工作流。自由复刻，审阅一切，用证据参与贡献。</p>
         </div>
 
         <div class="flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs font-semibold uppercase tracking-wide">
           <a :href="repository.url" target="_blank" rel="noreferrer" class="hover:text-rust">GitHub</a>
-          <a :href="`${repository.url}/blob/main/CONTRIBUTING.md`" target="_blank" rel="noreferrer" class="hover:text-rust">Contribute</a>
-          <a :href="`${repository.url}/blob/main/LICENSE`" target="_blank" rel="noreferrer" class="hover:text-rust">MIT License</a>
+          <a :href="`${repository.url}/blob/main/CONTRIBUTING.md`" target="_blank" rel="noreferrer" class="hover:text-rust">参与贡献</a>
+          <a :href="`${repository.url}/blob/main/LICENSE`" target="_blank" rel="noreferrer" class="hover:text-rust">MIT 许可证</a>
         </div>
       </div>
 
       <div class="flex flex-col justify-between gap-3 pt-5 font-mono text-xs uppercase tracking-wide text-steel sm:flex-row">
-        <span>Built in public · No telemetry</span>
-        <span>Skills should earn their context.</span>
+        <span>公开构建 · 不收集遥测数据</span>
+        <span>每个 Skill 都应证明其上下文价值。</span>
       </div>
     </div>
   </footer>

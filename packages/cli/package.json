@@ -1,7 +1,7 @@
 {
   "name": "agent-pantry",
   "version": "0.1.0",
-  "description": "Inspect and install human-reviewed Agent Skills for Codex, Claude Code, Cursor, Gemini CLI, and Copilot.",
+  "description": "中文优先的 Agent Skills 检查与安装 CLI，支持 Codex、Claude Code、Cursor、Gemini CLI 和 Copilot。",
   "type": "module",
   "license": "MIT",
   "bin": {
@@ -33,6 +33,10 @@
   },
   "homepage": "https://github.com/HaoXuanAce/agent-pantry#readme",
   "bugs": "https://github.com/HaoXuanAce/agent-pantry/issues",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "engines": {
     "node": ">=20.19.0"
   },

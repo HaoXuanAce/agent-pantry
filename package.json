@@ -9,6 +9,7 @@
     "node": ">=20.19.0"
   },
   "scripts": {
+    "prepublishOnly": "node -e \"console.error('Refusing to publish the private monorepo root. Publish from packages/cli instead.'); process.exit(1)\"",
     "dev": "pnpm --filter @agent-pantry/web dev",
     "typecheck": "pnpm --filter @agent-pantry/web typecheck && pnpm --filter agent-pantry typecheck",
     "test": "pnpm --filter agent-pantry test",

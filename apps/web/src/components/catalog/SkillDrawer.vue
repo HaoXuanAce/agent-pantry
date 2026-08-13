@@ -9,12 +9,12 @@
         :aria-labelledby="`${skill.id}-title`"
       >
         <div class="sticky top-0 z-10 flex items-center justify-between border-b-2 border-ink bg-acid px-5 py-4 sm:px-7">
-          <span class="font-mono text-xs font-bold uppercase tracking-widest">Specimen {{ skill.index }}</span>
+          <span class="font-mono text-xs font-bold uppercase tracking-widest">技能样本 {{ skill.index }}</span>
           <button
             ref="closeButton"
             type="button"
             class="grid size-10 place-items-center border-2 border-ink bg-paper transition-colors hover:bg-ink hover:text-paper"
-            aria-label="Close skill details"
+            aria-label="关闭技能详情"
             @click="emit('close')"
           >
             <X class="size-5" aria-hidden="true" />
@@ -24,7 +24,7 @@
         <div class="p-5 sm:p-8">
           <div class="flex flex-wrap items-center gap-3 font-mono text-xs font-semibold uppercase tracking-wide">
             <span class="border border-ink bg-paper-deep px-2 py-1">{{ skill.phase }}</span>
-            <span class="flex items-center gap-2"><span class="size-2 rounded-full bg-acid ring-1 ring-ink"></span>{{ skill.maturity }}</span>
+            <span class="flex items-center gap-2"><span class="size-2 rounded-full bg-acid ring-1 ring-ink"></span>已审阅</span>
             <span class="text-steel">v{{ skill.version }}</span>
           </div>
 
@@ -36,26 +36,26 @@
 
           <div class="mt-10 grid grid-cols-2 border-2 border-ink sm:grid-cols-3">
             <div class="border-b border-r border-ink p-4 sm:border-b-0">
-              <span class="font-mono text-xs uppercase text-steel">Maturity</span>
-              <strong class="mt-2 block font-mono text-sm uppercase">{{ skill.maturity }}</strong>
+              <span class="font-mono text-xs uppercase text-steel">成熟度</span>
+              <strong class="mt-2 block font-mono text-sm uppercase">已审阅</strong>
             </div>
             <div class="border-b border-ink p-4 sm:border-b-0 sm:border-r">
-              <span class="font-mono text-xs uppercase text-steel">Eval scenarios</span>
+              <span class="font-mono text-xs uppercase text-steel">评测场景</span>
               <strong class="mt-1 block text-3xl font-black">{{ skill.evalCount }}</strong>
             </div>
             <div class="col-span-2 p-4 sm:col-span-1">
-              <span class="font-mono text-xs uppercase text-steel">Claim</span>
-              <strong class="mt-2 block font-mono text-sm">Human reviewed</strong>
+              <span class="font-mono text-xs uppercase text-steel">质量声明</span>
+              <strong class="mt-2 block font-mono text-sm">已完成人工审阅</strong>
             </div>
           </div>
 
           <p class="mt-3 border-l-2 border-rust pl-3 font-mono text-xs leading-relaxed text-steel">
-            “Reviewed” means the instructions and authored eval scenarios passed repository checks. It is not a model benchmark score.
+            “已审阅”表示说明文件和编写的评测场景通过了仓库检查，并不代表模型基准测试得分。
           </p>
 
           <section class="mt-10 grid gap-6 sm:grid-cols-2">
             <div>
-              <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">Use it when</h3>
+              <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">适用场景</h3>
               <ul class="mt-4 space-y-3">
                 <li v-for="trigger in skill.triggers" :key="trigger" class="flex gap-3 text-sm leading-relaxed">
                   <ArrowRight class="mt-0.5 size-4 shrink-0 text-rust" aria-hidden="true" />
@@ -64,7 +64,7 @@
               </ul>
             </div>
             <div>
-              <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">Stop and ask</h3>
+              <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">此时应停止并询问</h3>
               <ul class="mt-4 space-y-3">
                 <li v-for="condition in skill.stopConditions" :key="condition" class="flex gap-3 text-sm leading-relaxed">
                   <OctagonAlert class="mt-0.5 size-4 shrink-0 text-rust" aria-hidden="true" />
@@ -75,7 +75,7 @@
           </section>
 
           <section class="mt-10">
-            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">Expected output</h3>
+            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">预期输出</h3>
             <ol class="mt-4 divide-y divide-ink border-y border-ink">
               <li v-for="(output, index) in skill.outputs" :key="output" class="flex items-center gap-4 py-4">
                 <span class="font-mono text-xs text-rust">0{{ index + 1 }}</span>
@@ -85,7 +85,7 @@
           </section>
 
           <section class="mt-10">
-            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">Runs where you work</h3>
+            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-steel">支持的智能体</h3>
             <div class="mt-4 flex flex-wrap gap-2">
               <span v-for="item in skill.supports" :key="item" class="border border-ink px-3 py-2 font-mono text-xs font-semibold">
                 {{ item }}
@@ -95,11 +95,11 @@
 
           <section class="mt-10 border-2 border-ink bg-ink text-paper">
             <div class="flex items-center justify-between border-b border-paper/30 px-4 py-3">
-              <span class="font-mono text-xs uppercase tracking-widest text-paper/60">Install locally</span>
+              <span class="font-mono text-xs uppercase tracking-widest text-paper/60">安装到本地</span>
               <button type="button" class="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase text-acid" @click="copyInstallCommand">
                 <Check v-if="copyState === 'copied'" class="size-4" aria-hidden="true" />
                 <Copy v-else class="size-4" aria-hidden="true" />
-                {{ copyState === 'copied' ? 'Copied' : copyState === 'failed' ? 'Copy failed' : 'Copy' }}
+                {{ copyState === 'copied' ? '已复制' : copyState === 'failed' ? '复制失败' : '复制' }}
               </button>
             </div>
             <code class="block overflow-x-auto p-4 font-mono text-sm text-acid">npx skills add {{ repository.owner }}/{{ repository.name }} --skill {{ skill.id }}</code>
@@ -111,7 +111,7 @@
             rel="noreferrer"
             class="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 border-2 border-ink bg-paper font-mono text-xs font-bold uppercase tracking-wide transition-colors hover:bg-rust hover:text-white"
           >
-            Read the complete field notes
+            阅读完整技能说明
             <ExternalLink class="size-4" aria-hidden="true" />
           </a>
         </div>

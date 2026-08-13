@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
@@ -22,11 +22,11 @@ jobs:
           version: 10.15.0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           registry-url: https://registry.npmjs.org
-          cache: pnpm
+          package-manager-cache: false
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -37,9 +37,6 @@ jobs:
       - name: Run quality gates
         run: pnpm check
 
-      - name: Publish with provenance
+      - name: Publish with trusted publishing
         working-directory: packages/cli
-        run: pnpm publish --access public --provenance --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+        run: npm publish --access public

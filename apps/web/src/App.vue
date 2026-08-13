@@ -9,15 +9,15 @@
         <div class="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
             <p class="mb-3 font-mono text-xs font-semibold uppercase tracking-widest text-steel">
-              Open inventory / {{ skills.length }} review-ready workflows
+              开放目录 / {{ skills.length }} 个可审阅工作流
             </p>
             <h2 class="max-w-3xl text-4xl font-black uppercase leading-none tracking-tight sm:text-5xl lg:text-6xl">
-              Skills that earn<br />their context.
+              每一份上下文，<br />都值得被认真对待。
             </h2>
           </div>
           <p class="max-w-md border-l-2 border-ink pl-4 text-sm leading-relaxed text-steel">
-            No scraped lists. No one-line prompts. Every entry includes a workflow, stop conditions,
-            an output contract, and four reviewable evaluation scenarios.
+            不收录抓取拼凑的清单，也不提供一句话提示词。每个条目都包含完整工作流、停止条件、
+            输出约定，以及四个可审阅的评测场景。
           </p>
         </div>
 

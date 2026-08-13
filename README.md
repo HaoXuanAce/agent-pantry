@@ -17,6 +17,7 @@
   <a href="#快速开始">快速开始</a> ·
   <a href="README.en.md">English</a> ·
   <a href="GITHUB_PUBLISH_GUIDE.md">发布指南</a> ·
+  <a href="NPM_PUBLISH_GUIDE.md">npm 发布</a> ·
   <a href="CONTRIBUTING.md">参与贡献</a>
 </p>
 
@@ -33,7 +34,7 @@
 - 至少 4 个带明确预期的结构化评测场景；
 - 零账号、零 API Key、零遥测。
 
-当前提供 **14 个可以读完、可以审阅的 Skills**，而不是 800 条无法验证的 Prompt。`reviewed` 只表示说明和评测定义通过仓库检查，不代表已经取得模型 Benchmark 分数。
+当前提供 **21 个可以读完、可以审阅的 Skills**，而不是 800 条无法验证的 Prompt。其中 7 个新 Skill 专门处理中国开发者高频场景：支付回调、小程序发布、App 内 H5、国内开发网络、表格导入、营销计价和中文产品本地化。`reviewed` 只表示说明和评测定义通过仓库检查，不代表已经取得模型 Benchmark 分数。
 
 ## 快速开始
 
@@ -94,14 +95,25 @@ CLI 只会复制纯文本目录，不启动后台服务，Skill 安装时不会�
 | [`frontend-reconstruction`](skills/frontend-reconstruction) | 高质量还原视觉参考 | 响应式页面、真实状态、视觉验收 |
 | [`browser-acceptance-evidence`](skills/browser-acceptance-evidence) | 证明浏览器用户旅程 | 旅程结果、截图、运行时证据 |
 | [`release-readiness`](skills/release-readiness) | 判断版本能否上线 | 上线结论、灰度与回滚计划 |
+| [`payment-callback-guardian`](skills/payment-callback-guardian) | 防止支付回调伪造、重复与资金错账 | 回调信任链、幂等状态机、对账方案 |
+| [`mini-program-release-readiness`](skills/mini-program-release-readiness) | 判断小程序能否安全提审上线 | 提审决定、隐私差异、真机矩阵 |
+| [`china-mobile-webview-acceptance`](skills/china-mobile-webview-acceptance) | 验收微信等 App 内的 H5 | 容器矩阵、授权链路、真机结论 |
+| [`china-dev-environment-doctor`](skills/china-dev-environment-doctor) | 排查国内与企业网络的开发工具故障 | 分层诊断、生效配置、可撤销修复 |
+| [`spreadsheet-import-guardian`](skills/spreadsheet-import-guardian) | 防止 Excel/CSV 导入污染业务数据 | 导入契约、安全校验、幂等恢复 |
+| [`promotion-rule-verifier`](skills/promotion-rule-verifier) | 验证满减、优惠券、秒杀与退款规则 | 计价流水线、边界矩阵、退款分摊 |
+| [`chinese-product-localization`](skills/chinese-product-localization) | 完成真正可用的中文产品本地化 | 术语差异、格式规则、界面验收 |
 
 ## 组合包
 
-增强 CLI 提供四个任务包：`trust-ai-code`、`ship-without-surprises`、`production-first-aid` 和 `safe-change-kit`。
+增强 CLI 提供 7 个任务包。除原有代码审查与发布组合外，新加入：
+
+- `china-product-launch`：中文本地化、App 内 H5、小程序与正式发布；
+- `china-commerce-core`：营销计价、支付回调、运营导入与商业系统发布；
+- `mainland-dev-rescue`：国内/企业网络诊断、依赖升级与供应链审计。
 
 ```bash
 npx agent-pantry pack list
-npx agent-pantry pack add trust-ai-code --dry-run
+npx agent-pantry pack add china-product-launch --dry-run
 ```
 
 ## 兼容平台

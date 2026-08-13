@@ -1,0 +1,33 @@
+{
+  "skill_name": "china-mobile-webview-acceptance",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Vue 单页活动在微信里首次打开 JSSDK 正常，pushState 到详情页后分享签名失败，Android 偶现、iOS 必现。请给出定位矩阵和修复边界。",
+      "expected_output": "比较服务端签名 URL、容器实际 URL 与 SPA 路由生命周期，并要求目标微信版本的真机复测。",
+      "files": [],
+      "expectations": ["记录 iOS 与 Android 的入口 URL 和路由变化", "按当前官方契约核对 hash、查询参数与签名 URL", "区分 SDK 配置成功和分享 API 成功", "不凭记忆硬编码签名规则"]
+    },
+    {
+      "id": 2,
+      "prompt": "支付宝内 H5 登录在 iPhone 上不断授权跳转，安卓正常。每次回调都有 code，但业务 Cookie 好像没留下，怎么查？",
+      "expected_output": "逐跳检查授权 state、code 一次性消费、Cookie 属性和容器跨站策略，定位循环而非增加重试。",
+      "files": [],
+      "expectations": ["要求记录每一跳状态码、Location 和 Cookie", "检查 Secure、SameSite、Domain 与 Path", "防止 code 或令牌长期留在 URL", "提供登录失败的可恢复状态"]
+    },
+    {
+      "id": 3,
+      "prompt": "企业微信里的审批 H5 在安卓输入备注时键盘把底部提交按钮盖住，iPhone 又会多出一截空白。请做真机验收方案。",
+      "expected_output": "覆盖键盘、视觉视口、安全区、字体放大和前进后退的双平台真机矩阵。",
+      "files": [],
+      "expectations": ["包含真实 iOS 与 Android 设备", "验证键盘弹起收起和输入框滚动", "验证安全区及固定底部按钮", "给出截图或录屏证据要求"]
+    },
+    {
+      "id": 4,
+      "prompt": "桌面 Chrome 的官网页脚需要改成两列，并调整 hover 颜色，不会在任何 App 内置浏览器中运行。",
+      "expected_output": "识别为普通桌面前端任务，不展开 WebView、授权或 JSSDK 验收。",
+      "files": [],
+      "expectations": ["明确不属于移动 WebView 范围", "不虚构容器兼容风险", "建议使用前端设计或常规实现流程"]
+    }
+  ]
+}

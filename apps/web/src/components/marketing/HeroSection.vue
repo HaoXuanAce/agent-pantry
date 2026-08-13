@@ -4,22 +4,22 @@
       <div class="relative flex flex-col justify-center border-ink px-5 py-20 sm:px-8 lg:col-span-7 lg:border-r lg:px-10 lg:py-28">
         <div class="reveal mb-8 flex items-center gap-3" style="animation-delay: 80ms">
           <span class="size-2 animate-pulse rounded-full bg-rust"></span>
-          <span class="font-mono text-xs font-semibold uppercase tracking-widest">Inventory open · {{ skillCount }} human-reviewed skills</span>
+          <span class="font-mono text-xs font-semibold uppercase tracking-widest">目录已开放 · {{ skillCount }} 个经人工审阅的 Skill</span>
         </div>
 
         <h1 class="reveal max-w-4xl text-6xl font-black uppercase leading-[0.86] tracking-tighter sm:text-7xl lg:text-8xl xl:text-9xl" style="animation-delay: 140ms">
-          Your agent<br />deserves<br /><span class="text-rust">better</span> habits.
+          你的智能体，<br />值得拥有<br /><span class="text-rust">更好的</span>工作习惯。
         </h1>
 
         <div class="reveal mt-10 grid max-w-2xl gap-8 sm:grid-cols-[1fr_auto] sm:items-end" style="animation-delay: 220ms">
           <p class="max-w-xl text-lg leading-relaxed text-steel sm:text-xl">
-            Field-tested workflows for coding agents. Inspect the method, install the folder, and get repeatable work instead of another lucky prompt.
+            为编程智能体准备的实战工作流。审阅方法、安装目录，把偶然命中的提示词变成可重复的可靠成果。
           </p>
           <a
             href="#catalog"
             class="group inline-flex h-14 items-center justify-center gap-3 border-2 border-ink bg-acid px-6 font-mono text-sm font-bold uppercase shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
           >
-            Browse skills
+            浏览技能
             <ArrowDownRight class="size-5 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" aria-hidden="true" />
           </a>
         </div>
@@ -31,30 +31,30 @@
 
         <div class="absolute inset-10 flex flex-col justify-between border border-paper/30 p-6">
           <div class="flex items-start justify-between font-mono text-xs uppercase tracking-widest text-paper/60">
-            <span>Context quality monitor</span>
-            <span>AP / LIVE</span>
+            <span>上下文质量监测</span>
+            <span>AP / 实时</span>
           </div>
 
           <div class="relative mx-auto grid size-56 place-items-center rounded-full border border-paper/30 bg-ink/80 backdrop-blur-sm">
             <div class="scanline absolute inset-y-0 w-20"></div>
             <div class="text-center">
               <span class="block font-mono text-6xl font-bold text-acid">{{ skillCount }}</span>
-              <span class="mt-1 block font-mono text-xs uppercase tracking-widest text-paper/60">Open workflows</span>
+              <span class="mt-1 block font-mono text-xs uppercase tracking-widest text-paper/60">开放工作流</span>
             </div>
           </div>
 
           <div class="grid grid-cols-3 border border-paper/30 bg-ink">
             <div class="border-r border-paper/30 p-3">
               <span class="block font-mono text-lg font-bold text-acid">{{ skillCount }}</span>
-              <span class="font-mono text-xs uppercase text-paper/50">Skills</span>
+              <span class="font-mono text-xs uppercase text-paper/50">技能</span>
             </div>
             <div class="border-r border-paper/30 p-3">
               <span class="block font-mono text-lg font-bold text-acid">05</span>
-              <span class="font-mono text-xs uppercase text-paper/50">Agents</span>
+              <span class="font-mono text-xs uppercase text-paper/50">智能体</span>
             </div>
             <div class="p-3">
               <span class="block font-mono text-lg font-bold text-acid">MIT</span>
-              <span class="font-mono text-xs uppercase text-paper/50">License</span>
+              <span class="font-mono text-xs uppercase text-paper/50">许可证</span>
             </div>
           </div>
         </div>

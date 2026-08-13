@@ -22,5 +22,23 @@
     "name": "Safe Change Kit",
     "description": "Upgrade dependencies and reconstruct interfaces with explicit change boundaries and verification evidence.",
     "skills": ["dependency-upgrade-surgeon", "frontend-reconstruction", "browser-acceptance-evidence"]
+  },
+  {
+    "id": "china-product-launch",
+    "name": "China Product Launch",
+    "description": "Localize and validate a product for Chinese users across mini programs, embedded mobile browsers, real-device journeys, and final release evidence.",
+    "skills": ["chinese-product-localization", "china-mobile-webview-acceptance", "mini-program-release-readiness", "browser-acceptance-evidence", "release-readiness"]
+  },
+  {
+    "id": "china-commerce-core",
+    "name": "China Commerce Core",
+    "description": "Protect pricing, payment callbacks, operational imports, API contracts, and release decisions for commerce systems serving Chinese users.",
+    "skills": ["promotion-rule-verifier", "payment-callback-guardian", "spreadsheet-import-guardian", "api-contract-auditor", "release-readiness"]
+  },
+  {
+    "id": "mainland-dev-rescue",
+    "name": "Mainland Dev Rescue",
+    "description": "Diagnose mainland and enterprise network failures, then change dependencies without weakening transport security or supply-chain trust.",
+    "skills": ["china-dev-environment-doctor", "dependency-upgrade-surgeon", "skill-supply-chain-auditor"]
   }
 ]

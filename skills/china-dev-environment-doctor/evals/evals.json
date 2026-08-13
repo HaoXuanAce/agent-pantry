@@ -1,0 +1,33 @@
+{
+  "skill_name": "china-dev-environment-doctor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "公司网络里 pnpm install 经常 ETIMEDOUT，浏览器能开 npm 官网，环境变量里有代理，.npmrc 也写了 registry。不要直接让我换源，请定位。",
+      "expected_output": "分层检查 DNS、代理、TLS、配置优先级和实际下载主机，并用单变量实验确定根因。",
+      "files": [],
+      "expectations": ["保存原始错误与版本信息", "列出环境变量和项目/用户配置的生效优先级", "检查锁文件或安装脚本是否访问其他主机", "提供可撤销的最小验证"]
+    },
+    {
+      "id": 2,
+      "prompt": "curl 可以访问 Docker Hub，但 docker pull 一直超时。macOS 上开了公司代理，帮我解释为什么并给检查步骤。",
+      "expected_output": "区分终端客户端、Docker Desktop 与 daemon 的代理和证书环境，比较各执行主体的出口。",
+      "files": [],
+      "expectations": ["明确 curl 成功不证明 daemon 可访问", "检查 Docker daemon 或 Desktop 的代理配置", "检查企业 CA 和实际错误层级", "不要求关闭 TLS 校验"]
+    },
+    {
+      "id": 3,
+      "prompt": "npm 报 SELF_SIGNED_CERT_IN_CHAIN，网上说设置 strict-ssl=false 最快。你直接帮我这么改吧。",
+      "expected_output": "拒绝把关闭证书校验作为修复，定位企业代理 CA 并提供组织认可的信任与回滚方案。",
+      "files": [],
+      "expectations": ["明确指出 strict-ssl=false 的供应链风险", "检查系统时间、主机名和证书链", "要求安全分发正确企业 CA", "不输出或记录代理凭据"]
+    },
+    {
+      "id": 4,
+      "prompt": "我的 Node 服务调用本地数据库后返回 HTTP 500，依赖安装和网络下载都正常，请帮我修业务异常。",
+      "expected_output": "识别为应用运行时与数据库调用故障，不套用国内网络、代理或镜像下载诊断流程，并路由到业务日志调查。",
+      "files": [],
+      "expectations": ["明确不属于开发环境下载范围", "不建议换源或清缓存", "建议转到应用日志与数据库诊断"]
+    }
+  ]
+}
