@@ -12,7 +12,7 @@
     "@fontsource-variable/chivo": "^5.2.8",
     "@fontsource/ibm-plex-mono": "^5.2.6",
     "@lucide/vue": "^1.31.0",
-    "vue": "^3.5.18"
+    "vue": "^3.5.42"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.12",
